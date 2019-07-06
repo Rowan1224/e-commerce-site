@@ -1,0 +1,104 @@
+<!-- <%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/cart.css">
+ </head>
+
+    <body>
+            <%- include('../includes/navigation.ejs') %>
+            <main>
+                <% if (orders.length > 0) { %>
+                    <ul class="cart__item-list">
+                            <li class="cart__item"> 
+                        <h1>Order Id</h1>
+                        <h2>Amount</h2>
+                        <h2>Status</h2>
+                       </li>
+                    </ul>
+                    <ul class="cart__item-list">
+                        <% orders.forEach(p => { %>
+                            <li class="cart__item">
+                                <h1><%= p.orderId %></h1>
+                                <h2><%= p.price %></h2>
+                                <h2><%= p.status %></h2> -->
+                                <!-- <form action="/order-details/<%= p.orderId %>" method="GET">
+                                    <input type="hidden" value="<%= p.orderId %>" name="orderId">
+                                    <button class="btn danger" type="submit">Details</button>
+                                </form> -->
+<!--                                
+                            </li>
+                        <% }) %>
+                    </ul>
+                    
+                <% } else { %>
+                    <h1>No Products in Cart!</h1>
+                <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>
+
+
+            
+<%- include('../includes/end.ejs') %> -->
+
+
+
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/cart.css">
+<!--===============================================================================================-->	
+    <link rel="icon" type="image/png" href="/table/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/table/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/table/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/table/vendor/animate/animate.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/table/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/table/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/table/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/table/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                
+                                <th class="column1">Order ID</th>
+                                <th class="column2">Amount</th>
+                                <th class="column3">Status</th>
+                               
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <% if (orders.length > 0) { %>
+                           
+                                <% orders.forEach(p => { %>
+                                    <tr>
+                                    
+                                            <td class="column1"><%= p.orderId %></td>
+                                            <td class="column2"><%=p.price %></td>
+                                            <td class="column3"><%=p.status %></td>
+                                <% }) %>
+                      
+                           
+                        <% } else { %>
+                            <h1>No Orders!</h1>
+                        <% } %>
+                        
+                                
+                                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

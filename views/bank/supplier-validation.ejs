@@ -1,0 +1,75 @@
+<!-- <%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <form class="product-form" action="/supplier-validate" method="POST">
+            <div class="cart__item">
+                <h1>Order Id#<%= orderId %></h1>
+                <h1>Order Id#<%= tranId %></h1>
+                <h2>Amount Tk<%= totalPrice %>/- </h2>
+                
+            </div>
+            <div class="form-control">
+                <label for="userId">User ID</label>
+                <input type="number" name="userId" id="userId" >
+            </div>
+            <div class="form-control">
+                    <label for="secretPin">Secret Pin</label>
+                    <input type="password" name="secretPin" id="secretPin" >
+            </div>
+            
+            <input type="hidden" name="orderId" value="<%= orderId %>">
+            <input type="hidden" name="tranId" value="<%= tranId %>">
+            <input type="hidden" name="amount" value="<%= totalPrice %>">
+            <button class="btn" type="submit"> Submit </button>
+            
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %> -->
+
+
+ <%- include('../includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="user">
+    <header class="user__header">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+        <h1 class="user__title">Transfer Request</h1>
+        <h1 class="user__title_id">Order ID <%= orderId %></h1>
+        <h1 class="user__title_id">Transaction ID <%= tranId %></h1>
+        <h2 class="user__title_id">Amount Tk <%= totalPrice %>/- </h2>
+    </header>
+    
+     
+    <form class="form" action="/supplier-validate" method="POST">
+
+        
+        <div class="form__group">
+            <input type="number" name="userId" id="userId" placeholder="User ID" class="form__input" />
+        </div>
+        
+        <div class="form__group">
+            <input type="password" name="secretPin" id="secretPin" placeholder="Password" class="form__input" />
+        </div>
+
+         
+        <input type="hidden" name="orderId" value="<%= orderId %>">
+        <input type="hidden" name="tranId" value="<%= tranId %>">
+        <input type="hidden" name="amount" value="<%= totalPrice %>">
+
+        
+        <button class="btn" type="submit">Submit</button>
+    </form>
+</div>
+  
+</body>
+
+</html>

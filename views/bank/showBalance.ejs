@@ -1,0 +1,41 @@
+<!-- <%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <div class="grid">
+                <div class="cart__item">
+                        <h1>User Id #<%= id %></h1>
+                        <h2>Balance <%= Balance %>/- </h2>
+                        
+                    </div>
+        </div>
+          
+    </main>
+<%- include('../includes/end.ejs') %> -->
+
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+<div class="user">
+  <header class="user__header">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+      <h1 class="user__title">Balance</h1>
+      <h1 class="user__title_id">User ID <%= id %></h1>
+      <h1 class="user__title_tk">TK <%= Balance %>/-</h1>
+      
+  </header>
+  
+  
+</div>
+
+</body>
+
+</html>

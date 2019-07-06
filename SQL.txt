@@ -1,0 +1,8 @@
+create table products ( id INT unsigned not null AUTO_INCREMENT PRIMARY KEY, title varchar(255) not null, price double not null,description Text not null,imageUrl varchar(255) not null);
+
+
+insert into products (title,description,imageUrl,price) values ('Game Of Thrones','https://apollo-ireland.akamaized.net/v1/files/c2zmm87xr6sf1-ZA/image;s=850x0','A great Book indeed',35.00);
+select * from products left join carts on products.id = carts.productId;
+
+
+UPDATE balances SET currentBalance = currentBalance + 500 where userId = 1;

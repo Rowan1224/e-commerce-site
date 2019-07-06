@@ -1,0 +1,68 @@
+<!-- <%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <%  if (user.userType === "C") { %>
+        <form class="product-form" action="/cashIN" method="POST">
+            <% } %>
+        <%  if (user.userType === "S") { %>
+            <form class="product-form" action="/cashOUT" method="POST">
+            <% } %>
+            <div class="form-control">
+                    <div class="cart__item">
+                            <h1>OrderId#<%= orderId %></h1>
+                            <h2>Amount Tk<%= totalPrice %>/- </h2>
+                            
+                        </div>
+                    
+                    <input type="hidden" name="amount" value="<%= totalPrice %>" >
+                    <input type="hidden" name="userId" value="<%= id %>">
+                    <input type="hidden" name="orderId" value="<%= orderId %>">
+                    
+            </div>
+        
+            <button class="btn" type="submit"> Confirm Transaction </button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %> -->
+
+<%- include('../includes/head.ejs') %>
+ <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="user">
+    <header class="user__header">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+        <h1 class="user__title">Confirm Request</h1>
+        <h1 class="user__title_id">Order ID <%= orderId %></h1>
+        <h2 class="user__title_id">Amount Tk <%= totalPrice %>/- </h2>
+    </header>
+    
+     
+    <%  if (user.userType === "C") { %>
+        <form class="form" action="/cashIN" method="POST">
+            <% } %>
+        <%  if (user.userType === "S") { %>
+            <form class="form" action="/cashOUT" method="POST">
+            <% } %>
+
+        
+            <input type="hidden" name="amount" value="<%= totalPrice %>" >
+            <input type="hidden" name="userId" value="<%= id %>">
+            <input type="hidden" name="orderId" value="<%= orderId %>">
+
+        
+        <button class="btn" type="submit">Confirm Transaction</button>
+    </form>
+</div>
+  
+</body>
+
+</html>

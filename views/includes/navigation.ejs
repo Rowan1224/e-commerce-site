@@ -1,0 +1,12 @@
+
+<% if (typeof(user) === "undefined") {%>
+    <%- include('../includes/navigation#.ejs') %>
+<% } else if (user.userType === "A") {%>
+    <%- include('../includes/navigationAdmin.ejs') %>
+<% } else if (user.userType === "C") {%>
+    <%- include('../includes/navigationCustomer.ejs') %>
+<% } else if (user.userType === "S") {%>
+    <%- include('../includes/navigationSupplier.ejs') %>
+<% } else { %>
+    <%- include('../includes/navigation#.ejs') %>
+    <% } %>
