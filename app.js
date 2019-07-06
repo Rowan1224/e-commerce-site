@@ -36,7 +36,6 @@ app.engine('hbs',expressHbs({
 
 
 app.set('view engine','ejs');
-
 app.set('views','views');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(session({secret: "somerandomstuff", 
@@ -72,23 +71,10 @@ app.use((req,res,next ) =>
 
 sequelize.sync().then(result =>{
 
-    // User.create({name: "Rowan", email : "r@gmail.com", password : "1697", userType :"C"}).then().catch( err =>{
-    //     console.log(err);
-    // });
-    // User.create({name: "Daraz", email : "a@gmail.com", password : "1697", userType :"A"}).then().catch( err =>{
-    //     console.log(err);
-    // });
     // User.create({name: "BookBD", email : "s@gmail.com", password : "1697", userType :"S"}).then().catch( err =>{
     //     console.log(err);
     // });
-    
-    // Balance.create({userId: "1234", secretPin : "1697", currentBalance: 10000}).then().catch( err =>{
-    //     console.log(err);
-    // });
-    // Balance.create({userId: "5678", secretPin : "1697", currentBalance: 10000}).then().catch( err =>{
-    //     console.log(err);
-    // });
-    // Balance.create({userId: "2", secretPin : "1697", currentBalance: 10000}).then().catch( err =>{
+    // Balance.create({userId: 3, secretPin : "1697", currentBalance: 10000}).then().catch( err =>{
     //     console.log(err);
     // });
 
